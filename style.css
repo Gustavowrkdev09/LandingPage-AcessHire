@@ -59,3 +59,13 @@ nav {
     font-family: "Roboto";
 }
 
+.navCtn {
+    padding: 15px 30px;
+    background-color: var(--cyanAH);
+    border: none;
+    border-radius: 30px;
+    font-family: "Roboto";
+    font-size: 18px;
+    color: var(--text);
+    margin-left: 20px;
+}
