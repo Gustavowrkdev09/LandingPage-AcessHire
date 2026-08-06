@@ -1,0 +1,112 @@
+:root {
+    --cyanAH: #45c5f3;
+    --grayAH: #6d6d6d;
+    --text: #3b3b3b;
+    --title: #252525;
+    --white: #fbfafa;
+    --offWhite: #f3f3f3;
+}
+
+::selection {
+    background-color: var(--cyanAH);
+    color: var(--grayAH);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--white);
+}
+
+
+nav {
+    background-color: var(--offWhite);
+    padding: 1px 35px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLogo a {
+    text-decoration: none;
+}
+
+.navLogo h1 {
+    font-family: "Inter";
+    font-size: 30px;
+    color: var(--title)
+}
+
+.navLogo span {
+    color: var(--cyanAH);
+}
+
+/* CADASTRO CONTENT */
+
+.cadContent {
+    justify-content: center;
+    align-items: center;
+    padding: 30px 300px 20px;
+}
+
+.cadContent h1 {
+    font-size: 40px;
+    font-family: "Inter";
+    font-weight: 500;
+    text-align: center;
+    color: var(--title);
+}
+
+.cadContent p {
+    color: var(--text);
+    font-size: 15px;
+    font-family: "Inter";
+    text-align: center;
+    text-decoration: underline;
+    color: var(--cyanAH)
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 20%;
+    margin: 0 auto;
+    padding: 10px 300px;
+}
+
+.formField input {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--title);
+}
+
+.formField label {
+    font-family: "Inter";
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.cadButton {
+    justify-content: center;
+    display: flex;
+    padding: 20px 300px;
+}
+
+.cadButton button {
+    padding: 20px 100px;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    background-color:var(--cyanAH);
+    color: var(--offWhite);
+}
