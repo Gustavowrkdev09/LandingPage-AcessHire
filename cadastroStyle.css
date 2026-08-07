@@ -7,6 +7,10 @@
     --offWhite: #f3f3f3;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 ::selection {
     background-color: var(--cyanAH);
     color: var(--grayAH);
@@ -16,12 +20,12 @@ body {
     padding: 0;
     margin: 0;
     background-color: var(--white);
+    overflow-x: hidden;
 }
-
 
 nav {
     background-color: var(--offWhite);
-    padding: 1px 35px;
+    padding: 12px clamp(20px, 5vw, 35px);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -39,24 +43,27 @@ nav {
 
 .navLogo h1 {
     font-family: "Inter";
-    font-size: 30px;
-    color: var(--title)
+    font-size: clamp(22px, 4vw, 30px);
+    color: var(--title);
+    margin: 0;
 }
 
 .navLogo span {
     color: var(--cyanAH);
 }
 
-/* CADASTRO CONTENT */
+/* ===== CADASTRO CONTENT ===== */
 
 .cadContent {
     justify-content: center;
     align-items: center;
-    padding: 30px 300px 20px;
+    /* era "30px 300px 20px" — padding lateral fixo em px estourava mobile.
+       clamp() entre 20px (mínimo) e algo que escala com a tela, travado em 200px no desktop */
+    padding: 30px clamp(20px, 8vw, 200px) 20px;
 }
 
 .cadContent h1 {
-    font-size: 40px;
+    font-size: clamp(26px, 5vw, 40px);
     font-family: "Inter";
     font-weight: 500;
     text-align: center;
@@ -64,49 +71,95 @@ nav {
 }
 
 .cadContent p {
-    color: var(--text);
+    color: var(--cyanAH);
     font-size: 15px;
     font-family: "Inter";
     text-align: center;
     text-decoration: underline;
-    color: var(--cyanAH)
 }
+
+/* ===== FORM FIELD ===== */
 
 .formField {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    width: 20%;
+
+    /* a correção principal: nada de width fixo + padding fixo brigando entre si.
+       o campo agora tem uma largura máxima confortável de leitura/preenchimento,
+       e usa 100% até esse limite — sem depender de padding pra "empurrar" a largura */
+    width: 100%;
+    max-width: 420px;
     margin: 0 auto;
-    padding: 10px 300px;
+    padding: 10px clamp(16px, 5vw, 20px); /* padding vertical/pequeno, não é mais isso que definia a largura */
 }
 
 .formField input {
     width: 100%;
-    padding: 20px;
+    padding: 16px 20px;
     box-sizing: border-box;
     border: 1px solid var(--title);
+    border-radius: 6px;
+    font-family: "Inter";
+    font-size: 15px;
+}
+
+.formField input:focus {
+    outline: none;
+    border-color: var(--cyanAH);
 }
 
 .formField label {
     font-family: "Inter";
     font-size: 15px;
     margin-bottom: 8px;
+    color: var(--text);
 }
+
+/* ===== BOTÃO DE CADASTRO ===== */
 
 .cadButton {
     justify-content: center;
     display: flex;
-    padding: 20px 300px;
+    padding: 20px clamp(20px, 8vw, 200px);
 }
 
 .cadButton button {
-    padding: 20px 100px;
+    /* padding lateral fixo em 100px também estourava em telas pequenas;
+       aqui a largura tem respiro próprio (mais larga que o form), controlada
+       por padding fluido em vez de um max-width emprestado do formulário */
+    width: 100%;
+    max-width: 560px;
+    padding: 18px clamp(40px, 8vw, 100px);
     font-family: "Inter";
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     font-weight: 600;
     border: none;
-    background-color:var(--cyanAH);
+    border-radius: 6px;
+    background-color: var(--cyanAH);
     color: var(--offWhite);
+    cursor: pointer;
+    transition: background-color .18s ease, transform .18s ease;
+}
+
+.cadButton button:hover {
+    background-color: #33b3e6;
+    transform: translateY(2px);
+}
+
+
+@media (max-width: 480px) {
+    .cadContent h1 {
+        padding: 0 8px;
+    }
+
+    .formField,
+    .cadButton button {
+        max-width: 100%;
+    }
+
+    .formField input {
+        padding: 14px 16px;
+    }
 }
