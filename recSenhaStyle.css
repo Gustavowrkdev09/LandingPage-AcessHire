@@ -58,15 +58,15 @@ nav {
 
 /* ===== CADASTRO CONTENT ===== */
 
-.cadContent {
+.recContent {
     justify-content: center;
-    align-items: center;
-    /* era "30px 300px 20px" — padding lateral fixo em px estourava mobile.
-       clamp() entre 20px (mínimo) e algo que escala com a tela, travado em 200px no desktop */
     padding: 30px clamp(20px, 8vw, 200px) 20px;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.cadContent h1 {
+.recContent h1 {
     font-size: clamp(26px, 5vw, 40px);
     font-family: "Inter";
     font-weight: 500;
@@ -74,12 +74,12 @@ nav {
     color: var(--title);
 }
 
-.cadContent p {
-    color: var(--cyanAH);
-    font-size: 15px;
+.recContent p {
+    color: var(--text);
+    font-size: 17px;
     font-family: "Inter";
     text-align: center;
-    text-decoration: underline;
+    padding: 10px 300px;
 }
 
 /* ===== FORM FIELD ===== */
@@ -89,10 +89,6 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-
-    /* a correção principal: nada de width fixo + padding fixo brigando entre si.
-       o campo agora tem uma largura máxima confortável de leitura/preenchimento,
-       e usa 100% até esse limite — sem depender de padding pra "empurrar" a largura */
     width: 100%;
     max-width: 420px;
     margin: 0 auto;
@@ -122,18 +118,13 @@ nav {
     color: var(--text);
 }
 
-/* ===== BOTÃO DE CADASTRO ===== */
-
-.cadButton {
+.sendButton {
     justify-content: center;
     display: flex;
     padding: 20px clamp(20px, 8vw, 200px);
 }
 
-.cadButton button {
-    /* padding lateral fixo em 100px também estourava em telas pequenas;
-       aqui a largura tem respiro próprio (mais larga que o form), controlada
-       por padding fluido em vez de um max-width emprestado do formulário */
+.sendButton button {
     width: 100%;
     max-width: 560px;
     padding: 18px clamp(40px, 8vw, 100px);
@@ -148,41 +139,18 @@ nav {
     transition: background-color .18s ease, transform .18s ease;
 }
 
-.cadButton button:hover {
+.sendButton button:hover {
     background-color: #33b3e6;
     transform: translateY(2px);
 }
 
-.cadEsqueci{
-    justify-content: center;
-    align-items: center;
-    /* era "30px 300px 20px" — padding lateral fixo em px estourava mobile.
-       clamp() entre 20px (mínimo) e algo que escala com a tela, travado em 200px no desktop */
-    padding: 1px clamp(20px, 8vw, 200px) 1px;
-}
-
-.cadEsqueci p{
-    color: var(--cyanAH);
-    font-size: 15px;
-    font-family: "Inter";
-    text-align: center;
-    text-decoration: underline;
-
-}
-
-.recSenha {
-    color: black;
-    text-decoration: none;
-}
-
-
 @media (max-width: 480px) {
-    .cadContent h1 {
+    .recContent h1 {
         padding: 0 8px;
     }
 
     .formField,
-    .cadButton button {
+    .sendButton button {
         max-width: 100%;
     }
 
