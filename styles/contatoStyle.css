@@ -329,6 +329,13 @@ input[type="search"]::-webkit-search-decoration {
 .inputText1{
     display: flex;
     justify-content: center;
+    gap: 60px;   
+}
+
+.inputText2{
+    display: flex;
+    align-items: flex-start;
+    gap: 37px;
    
 }
  
@@ -337,8 +344,39 @@ input[type="search"]::-webkit-search-decoration {
     padding: 16px 20px;
     box-sizing: border-box;
     border: 1px solid var(--title);
-    border-radius: 6px;
+
     font-family: "Inter";
     font-size: 15px;
  
+}
+
+.textInput2{
+    width: 50%;
+}
+.textInput2 input{
+    width: 100%;
+    padding: 12px 98px;
+    box-sizing: border-box;
+    border: 1px solid var(--title);
+    font-family: "Inter";
+    font-size: 15px;
+ 
+}
+
+.inputText3 textarea{
+    resize: none;
+    width: 300%;
+    height: 150px;
+    box-sizing: border-box;
+    border: 1px solid var(--title);
+    font-family: "Inter";
+    font-size: 15px;
+}
+
+.counteiner{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 150px;
 }
