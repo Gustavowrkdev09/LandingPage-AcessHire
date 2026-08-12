@@ -1,0 +1,121 @@
+:root {
+    --cyanAH: #45c5f3;
+    --grayAH: #6d6d6d;
+    --text: #3b3b3b;
+    --title: #252525;
+    --white: #fbfafa;
+    --offWhite: #f3f3f3c5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--cyanAH);
+    color: var(--grayAH);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* ===== NAV ===== */
+
+nav {
+    background-color: var(--offWhite);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(20px, 5vw, 100px);
+    padding: 15px clamp(20px, 5vw, 35px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navLogo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navLogo h1 {
+    font-family: "Inter";
+    font-size: clamp(22px, 4vw, 30px);
+    color: var(--title);
+    margin: 0;
+    white-space: nowrap;
+}
+
+.navLogo span {
+    color: var(--cyanAH);
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navLinks a {
+    color: var(--text);
+    font-size: 16px;
+    font-family: "Inter";
+    text-decoration: none;
+    transition: all .18s ease;
+}
+
+.navLinks a:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+    color: var(--title);
+    font-weight: 700;
+}
+
+.navMenu {
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 3vw, 30px);
+
+}
+
+.menuBar {
+    width: 40px;
+    height: 40px;
+}
+
+.perfilPic {
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    border: 2px solid var(--cyanAH);
+    border-radius: 50%;
+}
+
+.navToggle {
+    display: none;
+}
+
+.navBurger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.navBurger span {
+    width: 26px;
+    height: 3px;
+    background-color: var(--title);
+    border-radius: 3px;
+    transition: all .25s ease;
+}
