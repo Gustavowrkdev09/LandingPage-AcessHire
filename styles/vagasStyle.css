@@ -202,11 +202,14 @@ nav {
 }
 
 .jobCard {
-    padding: 130px 140px;
+    width: 300px;
+    height: 300px;
     border: none;
     box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.158);
-    background-color: #45c5f3;
+    background-color: #ffffff;
     border-radius: 7%;
+    position: relative;
+    overflow: hidden;
 }
 
 .jobCadContent button {
@@ -217,4 +220,21 @@ nav {
     color: var(--cyanAH);
     font-size: 18px;
     font-weight: 700;
+}
+
+.jobCard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7%;
+}
+
+.jobCard p {
+    position: absolute;
+    bottom: 20px;
+    left: 20px; 
+    margin: 0;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
