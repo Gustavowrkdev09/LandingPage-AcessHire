@@ -47,7 +47,11 @@ nav {
 .navLogo {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+}
+
+.navLogo a {
+    text-decoration: none;
 }
 
 .navLogo h1 {
@@ -55,13 +59,11 @@ nav {
     font-size: clamp(22px, 4vw, 30px);
     color: var(--title);
     margin: 0;
-    white-space: nowrap;
 }
 
 .navLogo span {
     color: var(--cyanAH);
 }
-
 .navLinks {
     display: flex;
     align-items: center;

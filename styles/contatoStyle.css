@@ -43,34 +43,33 @@ nav {
     top: 0;
     z-index: 1000;
 }
- 
+
 .navLogo {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
 }
 
 .navLogo a {
     text-decoration: none;
 }
- 
+
 .navLogo h1 {
     font-family: "Inter";
     font-size: clamp(22px, 4vw, 30px);
     color: var(--title);
     margin: 0;
 }
- 
+
 .navLogo span {
     color: var(--cyanAH);
 }
- 
 .navLinks {
     display: flex;
     align-items: center;
     gap: 40px;
 }
- 
+
 .navLinks a {
     color: var(--text);
     font-size: 16px;
@@ -78,53 +77,54 @@ nav {
     text-decoration: none;
     transition: all .18s ease;
 }
- 
+
 .navLinks a:hover {
     transform: translateY(-2px);
     cursor: pointer;
     color: var(--title);
     font-weight: 700;
 }
- 
-.navCad {
+
+.navMenu {
     display: flex;
     align-items: center;
-    gap: clamp(15px, 3vw, 50px);
+    gap: clamp(15px, 3vw, 30px);
+
 }
- 
-.navCad a {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: "Inter";
-    text-decoration: none;
-    color: var(--cyanAH);
-    transition: all .18s ease-in-out;
-    white-space: nowrap;
+
+.menuBar {
+    width: 40px;
+    height: 40px;
 }
- 
-.navCad a:hover {
-    transform: translateY(-2px);
+
+.perfilPic {
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    border: 2px solid var(--cyanAH);
+    border-radius: 50%;
+}
+
+.navToggle {
+    display: none;
+}
+
+.navBurger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
+    z-index: 1001;
 }
- 
-.navCad button {
-    padding: 10px clamp(15px, 3vw, 25px);
-    background-color: var(--cyanAH);
-    border: none;
-    border-radius: 30px;
-    font-family: "Roboto";
-    font-size: clamp(16px, 2vw, 25px);
-    font-weight: 700;
-    color: var(--white);
-    transition: all .18s ease;
-    white-space: nowrap;
+
+.navBurger span {
+    width: 26px;
+    height: 3px;
+    background-color: var(--title);
+    border-radius: 3px;
+    transition: all .25s ease;
 }
- 
-.navCad button:hover {
-    transform: translateY(2px);
-    cursor: pointer;
-}
- 
+
 .navToggle {
     display: none;
 }
@@ -144,34 +144,7 @@ nav {
     border-radius: 3px;
     transition: all .25s ease;
 }
- 
-/* ===== TOP CONTENT ===== */
- 
-.topContent {
-    padding: clamp(50px, 10vw, 100px) clamp(20px, 8vw, 200px);
-}
- 
-.topContent h1 {
-    text-align: center;
-    font-size: clamp(28px, 5vw, 50px);
-    font-family: "Inter";
-    color: var(--title);
-    line-height: 1.3;
-    margin: 0 0 20px 0;
-}
- 
-.topContent span {
-    font-weight: 1000;
-    color: var(--cyanAH);
-}
- 
-.topContent p {
-    text-align: center;
-    color: var(--grayAH);
-    font-family: "Inter";
-    font-size: clamp(15px, 2vw, 18px);
-}
- 
+
 @media (max-width: 480px) {
     nav {
         padding: 12px 16px;
@@ -195,55 +168,69 @@ nav {
         font-size: 14px;
         border-radius: 20px;
     }
- 
+    
     .navBurger span {
         width: 22px;
     }
 }
  
-.inputText1{
+/* ===== CONTAINER ===== */
+
+.container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    padding: 50px 30%;
+}
+
+.container h1 {
+    text-align: center;
+    font-family: "Inter";
+    font-size: 30px;
+    color: var(--title);
+}
+
+.inputBox1{
+    display: flex;
     gap: 60px;   
 }
 
-.inputText2{
-    display: flex;
-    align-items: flex-start;
-    gap: 37px;
-   
+.textInput p {
+    font-family: "Inter";
+    font-size: 14px;
 }
- 
-.inputText1 input{
+
+.inputBox1 input{
     width: 100%;
     padding: 16px 20px;
     box-sizing: border-box;
     border: 1px solid var(--title);
     font-family: "Inter";
     font-size: 15px;
- 
-}
-
-.textInput2{
-    width: 50%;
     
 }
-.inputText3 {
-    width: 100%;
-    max-width: 850px;
+
+.inputBox2{
+    display: flex;
+    gap: 120px;   
 }
-.textInput2 input{
-    width: 100%;
-    padding: 12px 98px;
+
+.inputBox2 input{
+    width: 130%;
+    padding: 16px 20px;
     box-sizing: border-box;
     border: 1px solid var(--title);
     font-family: "Inter";
     font-size: 15px;
 }
 
-.inputText3 textarea{
+.inputBox3 {
     width: 100%;
-    height: 160px;
+    max-width: 850px;
+}
+
+.inputBox3 textarea {
+    width: 100%;
+    height: 150px;
     resize: none;
     box-sizing: border-box;
     padding: 15px;
@@ -252,36 +239,16 @@ nav {
     font-size: 15px;
 }
 
-.counteiner{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 50px 150px;
-}
 
-.menuBar {
-    width: 40px;
-    height: 40px;
-}
-
-.perfilPic {
-    width: 50px;
-    height: 50px;
-    padding: 2px;
-    border: 2px solid var(--cyanAH);
-    border-radius: 50%;
-}
 .cadButton {
     justify-content: right;
     display: flex;
-    padding: 20px clamp(20px, 8vw, 200px);
-    margin-right: 380px;
+    padding: 20px 0;
+    max-width: 100%;
 }
 
 .cadButton button {
     width: 100%;
-    max-width: 560px;
     padding: 18px clamp(40px, 8vw, 100px);
     font-family: "Inter";
     font-size: clamp(16px, 2vw, 18px);
@@ -297,6 +264,8 @@ nav {
     background-color: #33b3e6;
     transform: translateY(2px);
 }
+
+/* ===== FOOTER ===== */
 
 .siteFooter {
     background-color: var(--text);
