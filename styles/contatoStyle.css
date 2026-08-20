@@ -145,41 +145,12 @@ nav {
     transition: all .25s ease;
 }
 
-@media (max-width: 480px) {
-    nav {
-        padding: 12px 16px;
-        gap: 10px;
-    }
- 
-    .navLogo h1 {
-        font-size: 20px;
-    }
- 
-    .navCad {
-        gap: 12px;
-    }
- 
-    .navCad a {
-        font-size: 14px;
-    }
- 
-    .navCad button {
-        padding: 8px 14px;
-        font-size: 14px;
-        border-radius: 20px;
-    }
-    
-    .navBurger span {
-        width: 22px;
-    }
-}
- 
 /* ===== CONTAINER ===== */
 
 .container{
     display: flex;
     flex-direction: column;
-    padding: 50px 30%;
+    padding: 50px clamp(20px, 8vw, 30%);
 }
 
 .container h1 {
@@ -191,6 +162,7 @@ nav {
 
 .inputBox1{
     display: flex;
+    flex-wrap: wrap;
     gap: 60px;   
 }
 
@@ -200,7 +172,7 @@ nav {
 }
 
 .inputBox1 input{
-    width: 100%;
+    flex: 1 1 200px;
     padding: 16px 20px;
     box-sizing: border-box;
     border: 1px solid var(--title);
@@ -211,11 +183,12 @@ nav {
 
 .inputBox2{
     display: flex;
-    gap: 120px;   
+    flex-wrap: wrap;
+    gap: 20px;   
 }
 
 .inputBox2 input{
-    width: 130%;
+    flex: 1 1 200px;
     padding: 16px 20px;
     box-sizing: border-box;
     border: 1px solid var(--title);
@@ -278,11 +251,9 @@ nav {
 }
 
 .footerCol {
-    flex: 1 1 200px; /* cada coluna encolhe/cresce, mas nunca fica menor que 200px antes de quebrar linha */
+    flex: 1 1 200px;
     min-width: 200px;
 }
-
-/* ===== Coluna 1: Integrantes ===== */
 
 .footerAbout h3 {
     font-family: "Inter";
@@ -311,8 +282,6 @@ nav {
     color: var(--footerMuted, #8a8a8a);
     margin: 0;
 }
-
-/* ===== Coluna 2: Navegação ===== */
 
 .footerNav h4 {
     font-family: "Inter";
@@ -348,8 +317,6 @@ nav {
     transform: translateX(4px);
 }
 
-
-
 .footerBrand h4 {
     font-family: "Inter";
     font-size: 19px;
@@ -378,7 +345,39 @@ nav {
     border-radius: 10%;
 }
 
-/* ===== Responsivo ===== */
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 900px) {
+    .navLinks {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--white);
+        padding: 20px;
+        gap: 20px;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, .08);
+    }
+
+    .navToggle:checked ~ .navLinks {
+        display: flex;
+    }
+
+    .navBurger {
+        display: flex;
+    }
+
+    .container {
+        padding: 40px clamp(20px, 6vw, 60px);
+    }
+
+    .inputBox1,
+    .inputBox2 {
+        gap: 20px;
+    }
+}
 
 @media (max-width: 700px) {
     .siteFooter {
@@ -392,3 +391,41 @@ nav {
     }
 }
 
+
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+ 
+    .navLogo h1 {
+        font-size: 20px;
+    }
+ 
+    .navCad {
+        gap: 12px;
+    }
+ 
+    .navCad a {
+        font-size: 14px;
+    }
+ 
+    .navCad button {
+        padding: 8px 14px;
+        font-size: 14px;
+        border-radius: 20px;
+    }
+    
+    .navBurger span {
+        width: 22px;
+    }
+
+    .container {
+        padding: 30px 16px;
+    }
+
+    .inputBox1 input,
+    .inputBox2 input {
+        flex: 1 1 100%;
+    }
+}

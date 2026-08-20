@@ -82,7 +82,7 @@ nav {
     font-size: 17px;
     font-family: "Inter";
     text-align: center;
-    padding: 10px 300px;
+    padding: 10px clamp(20px, 15vw, 300px);
 }
 
 /* ===== FORM FIELD ===== */
@@ -96,7 +96,6 @@ nav {
     max-width: 420px;
     margin: 0 auto;
     padding: 10px clamp(16px, 5vw, 20px);
-    /* padding vertical/pequeno, não é mais isso que definia a largura */
 }
 
 .formField input {
@@ -106,7 +105,7 @@ nav {
     border: 1px solid var(--title);
     border-radius: 6px;
     font-family: "Inter";
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .formField input:focus {
@@ -147,21 +146,7 @@ nav {
     transform: translateY(2px);
 }
 
-@media (max-width: 480px) {
-    .recContent h1 {
-        padding: 0 8px;
-    }
-
-    .formField,
-    .sendButton button {
-        max-width: 100%;
-    }
-
-    .formField input {
-        padding: 14px 16px;
-    }
-}
-
+/* ===== FOOTER ===== */
 
 .siteFooter {
     background-color: var(--text);
@@ -174,11 +159,9 @@ nav {
 }
 
 .footerCol {
-    flex: 1 1 200px; /* cada coluna encolhe/cresce, mas nunca fica menor que 200px antes de quebrar linha */
+    flex: 1 1 200px;
     min-width: 200px;
 }
-
-/* ===== Coluna 1: Integrantes ===== */
 
 .footerAbout h3 {
     font-family: "Inter";
@@ -207,8 +190,6 @@ nav {
     color: var(--footerMuted, #8a8a8a);
     margin: 0;
 }
-
-/* ===== Coluna 2: Navegação ===== */
 
 .footerNav h4 {
     font-family: "Inter";
@@ -274,7 +255,26 @@ nav {
     border-radius: 10%;
 }
 
-/* ===== Responsivo ===== */
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 480px) {
+    .recContent h1 {
+        padding: 0 8px;
+    }
+
+    .formField,
+    .sendButton button {
+        max-width: 100%;
+    }
+
+    .formField input {
+        padding: 14px 16px;
+    }
+
+    .sendButton button:hover {
+        transform: none;
+    }
+}
 
 @media (max-width: 700px) {
     .siteFooter {
